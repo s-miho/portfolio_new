@@ -1,0 +1,20 @@
+.font-lg {
+  font-size: 35px;
+}
+
+.aboutme {
+  &__title {
+
+    & > img {
+      width: 200px;
+    }
+  }
+}
+
+.skill {
+
+  &__items {
+    display: flex;
+    justify-content: center;
+  }
+}

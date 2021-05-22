@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miho's Portfolio</title>
+  <meta name="description" content="Portfolio site.">
+  <link rel="icon" type="image/x-icon" href="img/fav.ico">
+  <script src="scripts/vendors/pace.js"></script>
+  <script>
+    Pace.on('start', function() {
+      const paceProgressInner = document.querySelector('.pace-progress-inner');
+      paceProgressInner.innerHTML = '<div></div><div></div>';
+    });
+  </script>
+  <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+  </style>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://kit.fontawesome.com/e4011f0a8c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+</head>
+<body>
+  <div id="global-container">
+    <div id="container">
+      <div class="appear up">
+        <section class="top up-item" id="top">
+          <div class="top__inner">
+            <div class="top__title">
+              <span>Miho's Portfolio</span>
+            </div>
+          </div>
+          <div class="top__footer up-item">
+            <img class="top__downarrow" src="img/arrow.png" alt="">
+            <span class="top__scrolltext">
+              scroll
+            </span>
+          </div>
+        </section>
+        <header class="header__mobile">
+          <div class="hamburger up-item">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          
+          <nav class="globalMenuSp">
+              <ul>
+                  <li><a href="#">TOP</a></li>
+                  <li><a href="#about">ABOUT</a></li>
+                  <li><a href="#work">WORK</a></li>
+                  <li><a href="#skill">SKILL</a></li>
+                  <li><a href="#contact">CONTACT</a></li>
+              </ul>
+          </nav>
+        </header>
+      </div>
+      <div class="header__basis">
+        <header class="header appear up">
+          <div class="header__desktop up-item">
+            <img class="up-item" src="img/menu3.png" alt="">
+            <div class="header__menu up-item">
+              <ul>
+                <a href="#"><li class="text_animation"><span>T</span><span>O</span><span>P</span></li></a>
+                <a href="#about"><li class="text_animation"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></li></a>
+                <a href="#work"><li class="text_animation"><span>W</span><span>O</span><span>R</span><span>K</span></li></a>
+                <a href="#skill"><li class="text_animation"><span>S</span><span>K</span><span>I</span><span>L</span><span>L</span></li></a>
+                <a href="#contact"><li class="text_animation"><span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span></li></a>
+              </ul>
+            </div>
+          </div>
+        </header>
+      </div>
+      <main>
+        <section class="aboutme right appear up" id="about">
+              <div class="aboutme__inner">
+                <div class="aboutme__title up-item">
+                  About me
+                  <img class="up-item" src="img/about_top.png" alt="">
+                </div>
+                <div class="aboutme__text up-item">
+                  <span>seki miho</span>
+                  <p>心理学部を卒業後、塾講師兼事務、<br>
+                  調剤薬局医療事務、交通広告媒体管理を経験。<br>
+                  フロントエンドエンジニアを目指して日々勉強中です。</p>
+                </div>
+                <div class="aboutme__icon up-item">
+                  <a href="https://github.com/s-miho" target="_blank"><i class="fab fa-github"></i></a>
+                  <a href="#contact"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+        </section>
+      </main>
+      <img class="img-left" src="img/left.png" alt="">
+      <img class="img-right" src="img/right.png" alt="">
+      <main>
+        <section class="work right appear up" id="work">
+          <div class="work__inner_top">
+            <div class="work__title up-item">
+              <img class="up-item" src="img/work_back.png" alt="">
+              <p>Work</p>
+            </div>
+            <div class="work__text up-item">
+              現在までの制作物です。
+            </div>
+          </div>
+
+          <div class="work__items up-item">
+            <a href="#" class="js-modal-open up-item" data-target="modal01">
+              <div class="work__items-inner">
+                <div class="work__items1">
+                  <div class="mask">
+                    <div class="caption">
+                      Portfolio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="js-modal-open up-item" data-target="modal02">
+              <div class="work__items-inner">
+                <div class="work__items2">
+                  <div class="mask">
+                    <div class="caption">
+                      House<br>Interior
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="js-modal-open up-item" data-target="modal03">
+              <div class="work__items-inner">
+                <div class="work__items3">
+                  <div class="mask">
+                    <div class="caption">
+                      Portfolio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!--モーダル１-->
+            <div id="modal01" class="modal js-modal">
+              <div class="modal-bg js-modal-close">
+              </div>
+                <div class="modal-content">
+                  <div class="modal-content__inner">
+                    <div class="modal-content__img">
+                      <img src="img/work_items1.png" alt="">
+                    </div>
+                    <div class="modal-content__text">
+                      <p>
+                        <span>Portfolio site 0</span><br>
+                        初制作Webページ。
+                      </p>
+                      <p>
+                        <span>開発環境</span><br>
+                        macOS
+                      </p>
+                      <p>
+                        <span>使用言語等</span><br>
+                        HTML/CSS/Javascript/jQuery/Git
+                      </p>
+                      <a class="btn__work" href="#" target="_blank">
+                        <i class="fas fa-desktop"></i> View site
+                      </a>
+                      <a class="btn__work" href="https://github.com/s-miho/portfolio" target="_blank">
+                        <i class="fab fa-github"></i> Git Hub
+                      </a>
+                    </div>
+                  </div>
+                  <a href="#" class="js-modal-close"><i class="fas fa-window-close"></i></a>
+                </div>
+            </div>
+            <!--モーダル２-->
+            <div id="modal02" class="modal js-modal">
+              <div class="modal-bg js-modal-close">
+              </div>
+                <div class="modal-content">
+                  <div class="modal-content__inner">
+                    <div class="modal-content__img">
+                      <img src="img/work_items2.png" alt="">
+                    </div>
+                    <div class="modal-content__text">
+                      <p>
+                        <span>House Interior site</span><br>
+                        架空のインテリアショップWebページ。
+                      </p>
+                      <p>
+                        <span>開発環境</span><br>
+                        macOS
+                      </p>
+                      <p>
+                        <span>使用言語等</span><br>
+                        HTML/CSS/Javascript/Sass/Git
+                      </p>
+                      <a class="btn__work" href="https://portfoliointeriorsite.netlify.app/" target="_blank">
+                        <i class="fas fa-desktop"></i> View site
+                      </a>
+                      <a class="btn__work" href="https://github.com/s-miho/interiorsite" target="_blank">
+                        <i class="fab fa-github"></i> Git Hub
+                      </a>
+                    </div>
+                  </div>
+                  <a href="#" class="js-modal-close"><i class="fas fa-window-close"></i></a>
+                </div>
+            </div>
+            <!--モーダル３-->
+            <div id="modal03" class="modal js-modal">
+              <div class="modal-bg js-modal-close">
+              </div>
+                <div class="modal-content">
+                  <div class="modal-content__inner">
+                    <div class="modal-content__img">
+                      <img src="img/work_items3.png" alt="">
+                    </div>
+                    <div class="modal-content__text">
+                      <p>
+                        <span>Portfolio site</span><br>
+                        勉強を進める中で再度作成したポートフォリオサイト。<br>
+                        現在ご覧いただいているWebページです。
+                      </p>
+                      <p>
+                        <span>開発環境</span><br>
+                        macOS
+                      </p>
+                      <p>
+                        <span>使用言語等</span><br>
+                        HTML/CSS/Javascript/jQuery/Sass/Git
+                      </p>
+                      <a class="btn__work" href="https://portfoliointeriorsite.netlify.app/" target="_blank">
+                        <i class="fas fa-desktop"></i> View site
+                      </a>
+                      <a class="btn__work" href="https://github.com/s-miho/interiorsite" target="_blank">
+                        <i class="fab fa-github"></i> Git Hub
+                      </a>
+                    </div>
+                  </div>
+                  <a href="#" class="js-modal-close"><i class="fas fa-window-close"></i></a>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section class="skill right appear up" id="skill">
+          <div class="skill__inner">
+            <div class="skill__title up-item">
+              Skill
+            </div>
+            <div class="skill__items">
+              <ul class="up-item">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>jQuery</li>  
+              </ul>
+              <ul class="up-item">
+                <li>Ruby</li>
+                <li>Rails</li>
+                <li>SQL</li>
+                <li>MySQL</li>
+              </ul>
+              <ul class="up-item">
+                <li>Vue.js</li>
+                <li>Sass</li>
+                <li>Git</li>
+              </ul>
+              <div class="skill__icon"><img class="up-item" src="img/skill_back.png" alt=""></div>
+            </div>
+            
+          </div>
+        </section>
+        <section class="contact right appear up" id="contact">
+          <div class="contact__inner">
+            <div class="contact__title up-item">
+              <img class="up-item" src="img/contact.png" alt="">
+              Contact
+            </div>
+            <div class="contact__form up-item">
+              <div class="contact__text up-item">
+                <P>最後までご覧いただき<br>
+                誠にありがとうございました！</P>
+                <p>ご質問、ご感想等ございましたら<br>
+                こちらのフォームをご利用ください。</p>
+              </div>
+              <div class="form-submit up-item">
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfXnF-aYWQKOvmjQnAEQLNbn9KtY_V8CycqsG1FgeN5dF5lFg/formResponse" name="googleForm" target="thxMsg" onsubmit="showThxMessage();">
+                  <div id="form" class="wrap">
+                    <div class="form-content">
+                      <label for="form-name">Name</label>
+                      <input class="input" id="form-name" type="text" name="entry.2039168325" required="">
+                    </div>
+                    <div class="form-content">
+                      <label for="form-email">Email</label>
+                      <input class="input" id="form-email" type="email" name="entry.2116122189">
+                    </div>
+                    <div class="form-content">
+                      <label for="form-msg">Message</label>
+                      <textarea class="input" id="form-msg" name="entry.1307312011" required=""></textarea>
+                    </div>
+                    <div class="form-content">
+                      <button type="submit" class="form-btn" name="button" value="send"><span><i class="far fa-paper-plane"></i> send</span></button>
+                    </div>
+                    <iframe name="thxMsg" style="display:none;"></iframe>
+                  </div>
+                  <article id="thxMessage" style="display: none; text-align: center;">
+                      <p>＼＼　<i class="far fa-envelope"></i>　／／</p><br>
+                      <p class="mail-comment">お問い合わせありがとうございます！<br>
+                      メールアドレスを入力してくださった方へは<br>
+                      近日中に返信させていただきます。</p>
+                  </article>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__top"></div>
+        <div class="footer__inner">
+          <p class="copy">&copy;</p>
+          <p class="copy__txt">2021 s.miho</p> 
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="scripts/vendors/modal.js"></script>
+  <script src="scripts/vendors/form.js"></script>
+  <script src="scripts/vendors/polyfill.js"></script>
+  <script src="scripts/vendors/scroll.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1020 @@
+//ベーススタイル
+
+body {
+  font-family: 'Kaushan Script', 'Kiwi Maru', sans-serif;
+  // background-color: rgb(255, 255, 247);
+}
+
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 20px;
+}
+.font-lg {
+  font-size: 30px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 130px !important;
+}
+.pd-sm {
+  padding-bottom: 16px !important;
+}
+.pd-lg {
+  padding-bottom: 80px !important;
+}
+
+.pt {
+  padding-top: 50px;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+.max-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $MaxWidth;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: $cBlack;
+}
+
+
+.header {
+  @extend .max-width;
+  margin: 0 auto;
+  position: relative;
+
+  &__basis {
+    @extend .max-width;
+  }
+ 
+
+  &__desktop { 
+    position: absolute; 
+    display: none;
+    top: -90px;
+    z-index: 5;
+
+    &.fixed {
+      position: fixed;
+      top: 20px;
+    }
+    
+
+    & > img {
+      position: relative;
+      opacity: 0.9;
+      width: 350px;
+    }  
+  }
+  &__menu {
+    @extend .font-md;
+    position: absolute;
+    top: 10px;
+    left: 95px;
+
+    & > ul {
+      list-style-type: none;
+      margin-top: 55px;
+      text-align: center;
+      & li {
+        margin: 15px 0;
+        text-shadow: 2px 2px 0 $cOlive;
+      }
+    }
+  }
+}
+
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 60;
+  right : 2em;
+  top   : 20px;
+  width : 100px;
+  height: 42px;
+  cursor: pointer;
+
+  & span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    right: 0;
+    background : $cBlack;
+    transition: 0.3s ease-in-out;
+    margin: 0 0 0 auto;
+    box-shadow: 2px 2px 0 $cOlive;
+
+    &:nth-child(1) {
+      top: 10px;
+      width: 60px;
+      @include animation (
+        $name: equalizer01,
+        $duration: 7s,
+        $iteration-count: infinite
+      );
+    }
+    &:nth-child(2) {
+      top: 20px;
+      width: 50px;
+      @include animation (
+        $name: equalizer02,
+        $duration: 5s,
+        $delay: 0.33s,
+        $iteration-count: infinite
+      );
+    }
+    &:nth-child(3) {
+      top: 30px;
+      width: 20px;
+      @include animation (
+        $name: equalizer02,
+        $duration: 5s,
+        $iteration-count: infinite
+      );
+    }
+  }
+  &.open span {
+    animation: unset;
+    background: $cWhite;
+    width: 30px;
+    transition: transform 0.6s ease;
+    box-shadow: none;
+    &:nth-child(1) {
+      transform: translate(-19px,5px) rotate(-405deg);
+      width : 14px;
+    }
+    &:nth-child(3){
+      transform: translate(-19px,-5px) rotate(405deg);
+      width : 14px;
+    }    
+  }
+}
+nav {
+  &.globalMenuSp {
+    position: fixed;
+    z-index : 50;
+    top  : 0;
+    left : 0;
+    color: $cBlack;
+    text-align: center;
+    transform: translateX(100%);
+    transition: all 0.6s;
+    width: 100%;
+
+    & ul {
+      background: rgba(0, 0, 0, 0.3);
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+
+      & li {
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+        border-bottom: 1px solid $cWhite;
+  
+        &:last-child {
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+  
+        &:hover{
+          background :$cOlive;
+        }
+  
+        & a {
+          display: block;
+          color: $cWhite;
+          padding: 1.4em 0;
+          text-decoration :none;
+        }
+      }
+    }  
+    &.open {
+      transform: translateX(0);
+    }  
+  } 
+}
+
+@keyframes equalizer01 {
+  0%,
+  50%,
+  100% {
+    width: 70%;
+  }
+  10%,
+  40%,
+  60% {
+    width: 50%;
+  }
+  20%,
+  80% {
+    width: 100%;
+  }
+  30%,
+  70%,
+  90% {
+    width: 10%;
+  }
+}
+@keyframes equalizer02 {
+  0%,
+  50%,
+  100% {
+    width: 40%;
+  }
+  10%,
+  40%,
+  60% {
+    width: 30%;
+  }
+  20%,
+  80% {
+    width: 50%;
+  }
+  30%,
+  70%,
+  90% {
+    width: 20%;
+  }
+}
+
+
+
+
+.text_animation {
+  display: block;
+
+  & span {
+  display: inline-block;
+  }
+  &:hover span {
+    @include animation (
+      $name: wave,
+      $duration: 0.2s,
+      $direction: alternate,
+      $iteration-count: 2,
+    );
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i + 1}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+ 
+@keyframes wave {
+  100% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+////TOP
+
+.top {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  background-image: url(../img/background_top.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  &__inner {
+    @extend .content-width;
+  }
+
+  &__title {
+    font-size: 4em;
+    padding: 35% 10% 0 10%;
+    text-align: center;
+    overflow: hidden;
+    transform: translate(-104%, 0);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 4s;
+    & span {
+      display: block;
+      transform: translate(130%, 0);
+      transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 4s;
+    }
+
+    &.inview,
+    &.inview span {
+      transform: translate(0, 0);
+    }
+
+  }
+
+
+  &__footer {
+    position: absolute;
+    left: 20%;
+    bottom: 35%;
+    transform: translateX(-50%);
+    z-index: 2;
+    height: 76px;
+    width: 50px;
+    overflow: hidden;
+  }
+  
+  &__downarrow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    opacity: 0.5;
+    @include animation(
+      $name: kf-arrow-anime,
+      $iteration-count: infinite,
+      $duration: 2s,
+      $timing-function: linear
+      );
+  }
+  
+  &__scrolltext {
+    @extend .font-sm;
+    font-family: 'Kiwi Maru', sans-serif;
+    position: absolute;
+    color: rgba(66, 75, 63, 0.6);
+    transform: rotate(90deg);
+    left: 19px;
+    top: 10px;
+  }
+}
+
+
+@keyframes kf-arrow-anime {
+  0%,
+  50%,
+  100% {
+    transform: translateY(-8%);
+  }
+  30% {
+    transform: none;
+  }
+}
+
+////ABOUT
+
+.aboutme {
+  @extend .content-width;
+  @extend .mb-lg;
+  @extend .pt;
+
+  &__inner {
+    width: 450px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @extend .font-lg;
+
+    & > img {
+      width: 110px;
+    }
+  }
+
+  &__text {
+    @extend .font-sm;
+    font-family: 'Kiwi Maru', sans-serif;
+
+    & > span {
+      background:linear-gradient(transparent 60%, $cBrown 60%);
+    }
+
+    & > p {
+      padding-top: 10px;
+    }
+  }
+  &__icon {
+    font-size: 1.5em;
+    
+    & i {
+      margin-right: 5px;
+      transition: color 0.45s ease;
+
+      &:hover {
+        color: $cOlive;
+      }
+    }
+  }
+}
+
+.img-left {
+  position: absolute;
+  top: 1250px;
+  left: -5px;
+  max-width: 90%;
+  z-index: -5;
+  opacity: 0.8;
+}
+.img-right {
+  position: absolute;
+  top: 2200px;
+  right: -5px;
+  max-width: 90%;
+  z-index: -5;
+  opacity: 0.8;
+}
+
+//work
+.work {
+  @extend .content-width;
+  @extend .mb-lg;
+  @extend .pt;
+
+  &__items {
+    @extend .flex;
+    align-items:center;
+    width: 550px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  &__inner_top {
+    width: 450px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  &__modal {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__title {
+    @extend .font-lg;
+    position: relative;
+    height: 100px;
+
+    & > img {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      max-width: 100%;
+    } 
+    & > p {
+      display: inline-block;
+      position: absolute;
+      top: 20%;
+      left: 30%;
+    } 
+  }
+
+  &__text {
+    @extend .font-sm;
+    padding-bottom: 30px;
+  }
+  &__items1 {
+    width: 250px;
+    height: 200px;
+    background-image: url(../img/portfolio_1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__items2 {
+    width: 250px;
+    height: 200px;
+    background-image: url(../img/portfolio_2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__items3 {
+    width: 250px;
+    height: 200px;
+    background-image: url(../img/portfolio_3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__items-inner {
+    margin: 10px 10px;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    box-shadow: 8px 8px 0px -3px rgba(239, 233, 230, 0.7);
+    border: 1px solid;
+    border-color: $cBrown;
+    overflow: hidden;
+
+    &:hover .mask {
+      top: 0;
+    }
+  }
+}
+
+.mask {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(92, 89, 73, 0.5);
+  transition: all 0.4s ease; 
+}
+
+.caption {
+  position: absolute;
+  top: 42%;
+  left: 40%;
+  color: $cWhite;
+}
+
+
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 900;
+}
+
+/* モーダル背景 */
+.modal-bg{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+/* モーダル本体 */
+.modal-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: scroll;
+  width: 800px;
+  height: 550px;
+  max-width: 80%;
+  max-height: 90%;
+  padding: 20px 20px;
+  background: $cWhite;
+  @extend .font-sm;
+  font-family: 'Kiwi Maru', sans-serif;
+  word-break: break-all;
+
+  &__img {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  &__inner {
+    margin: 0 auto;
+    @extend .flex;
+  }
+
+  & img {
+    max-width: 80%;
+    width: 280px;
+    border: 1px solid;
+    border-color: $cBrown;
+  }
+  & span {
+    background:linear-gradient(transparent 60%, $cBrown 60%);
+  }
+  &__text {
+    padding-bottom: 30px;
+    width: 350px;
+    max-width: 90%;
+  }
+}
+
+/* モーダルウィンドウ表示中に記事本体を固定 */
+body.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.js-modal-close {
+  @extend .font-md;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+
+  & > i {
+    color: $cOlive;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.btn__work {
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  height: 45px;
+  padding: 10px 15px;
+  color: $cBlack;
+  border: none;
+  border-radius: 3px;
+  transition: 0.4s;
+  background-color: $cBrown;
+  margin: 5px 10px 5px 0;
+
+  &:hover {
+  background: $cOlive;
+  color: $cWhite;
+  text-decoration: none;
+  }
+}
+
+
+//skill
+
+.skill {
+  @extend .content-width;
+  @extend .mb-lg;
+  @extend .pt;
+
+  &__inner {
+    width: 450px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @extend .font-lg;
+    text-align: center;
+  }
+  &__icon {
+    & > img {
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      width: 200px;
+      max-width: 70%;
+    }
+  }
+  &__items {
+    @extend .font-sm;
+    font-family: 'Kiwi Maru', sans-serif;
+    margin-top: 20px;
+    padding: 30px;
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      z-index: 2;
+      content: '';
+      transition: all 1.2s;
+    }
+    &::before {
+      border-top: 1.5px solid $cOlive;
+      border-bottom: 1.5px solid $cOlive;
+      transform: scale(0, 1);
+    }
+    &::after {
+      border-right: 1.5px solid $cOlive;
+      border-left: 1.5px solid $cOlive;
+      transform: scale(1, 0);
+    }
+
+    &.inview {
+      &::after,
+      &::before {
+        transform: scale(1);
+      }
+    }
+
+    & > ul {
+      list-style-type: none;
+      position: relative;
+      margin-top: 5px;
+      margin-bottom: 0;
+
+      & > li {
+  	    height:33px;
+        width: 100px;
+
+        &::before {
+          font-family: "Font Awesome 5 Free";
+          content: '\f14a';
+          font-weight: 900;
+          position: absolute;
+          left : 1em;
+          color: $cOlive; 
+
+        }
+      }
+    }
+  }
+}
+
+//contact
+
+.contact {
+  @extend .content-width;
+  @extend .mb-lg;
+  padding-top: 50px;
+  
+
+  &__inner {
+    @extend .font-sm;
+    width: 450px;
+    max-width: 90%;
+    margin: 0 auto;
+    height: 500px;
+    background-image: url(../img/contact_back.png);
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: right bottom;
+  }
+
+  &__text {
+    margin-bottom: 30px
+  }
+
+  &__title {
+    @extend .font-lg;
+    margin-bottom: 40px;
+    display: flex;
+
+    & > img {
+      width: 60px;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+}
+
+div.wrap div {
+  position: relative;
+  margin: 20px 0;
+}
+.form-submit {
+  font-family: 'Kiwi Maru', sans-serif;
+}
+
+label {
+  font-size: 0.9em;
+  position: absolute;
+  top: 0;
+  margin: 10px;
+  padding: 0 10px;
+  transition: top 0.2s ease-in-out, 
+              font-size 0.2s ease-in-out;
+}
+
+.active {
+  top: -20px;
+  font-size: 0.8em;
+}
+
+input,
+textarea {
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid $cBrown;
+  background: rgba(240, 232, 216, 0.6);
+  padding: 8px 10px;
+  color: $cBlack;
+
+  &:focus {
+    outline: none;
+  }
+} 
+
+input {
+  height: 45px;
+}
+textarea {
+  height: 90px;
+}
+
+
+
+.form-btn {
+  font-size: 0.8em;
+  height: 35px;
+  width: 100px;
+  overflow: hidden;
+  padding: 10px 10px;
+  color: $cWhite;
+  background: $cBlack;
+  line-height: 2px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  border: none;
+  outline: none;
+
+  & span {
+    position: relative;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-96%);
+    background-color: #CDCC97;
+  }
+  &:hover {
+    color: $cBlack;
+    &::before {
+      transform: translateX(0%);
+    }
+  }
+}
+
+#thxMessage {
+  margin-top: 40px;
+}
+
+
+
+//footer
+
+.footer {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  
+  
+  &__top {
+    width: 100%;
+    height: 200px;
+    background-image: url(../img/footer_2.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: -110px;
+  }
+
+  &__inner {
+    padding-top: 25px;
+    text-align: center;
+    font-family: 'Kiwi Maru', sans-serif;
+    box-shadow: 0 -3px 8px 1px rgba(145, 144, 144, 0.2);
+    background-color: $cOlive;
+    background-position: bottom;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+
+    & p {
+      font-size: 0.7em;
+      display: inline-block;
+      color: $cWhite;        
+    }
+  }
+}
+
+.copy {
+  font-size: 20px;
+  &__txt {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+}
+
+//ふわっと上がる
+
+.appear.up {
+  & .up-item {
+    transition: all 0.8s;
+    opacity: 0;
+    transform: translateY(23px);
+  }
+
+  &.inview {
+    & .up-item {
+      opacity: 1;
+      transform: none;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.3s;
+        }
+      }
+    }
+  }
+}
+
+//ローダー
+
+#global-container {
+  transition: opacity 1s;
+}
+ 
+.pace-running #global-container {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pace { 
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+}
+ 
+.pace .pace-progress {
+  transform: none !important;
+  text-align: center;
+}
+ 
+.pace .pace-progress::after {
+  content: attr(data-progress-text);
+  display: block;
+  font-weight: 100;
+  font-size: 2em;
+  color: $cOlive;
+}
+
+ 
+.pace.pace-inactive {
+  display: none;
+}
+
+.pace-progress-inner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 30px auto;
+ 
+  & > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $cOlive;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include animation(
+      $name: sk-bounce,
+      $duration: 2s,
+      $iteration-count: infinite,
+      $timing-function: ease-in-out
+    );
+ 
+    &:nth-child(2) {
+      animation-delay: -1s;
+    }
+  }
+}
+ 
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

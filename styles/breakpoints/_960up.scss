@@ -1,0 +1,55 @@
+//960px以上のモニター
+
+.font-sm {
+  font-size: 16px;
+}
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 40px;
+}
+
+.mb-lg {
+  margin-bottom: 150px !important;
+}
+.pd-lg {
+  padding-bottom: 250px !important;
+}
+
+
+.flex {
+  display: flex;
+  flex-direction: row;	
+  flex-wrap: wrap;
+}
+
+.top {
+  &__footer {
+    left: 20%;
+    bottom: 30%;
+  }
+
+  &__title {
+    font-size: 4em;
+    padding: 45% 10% 0 10%;
+  }
+}
+
+.img-left {
+  top: 1200px;
+}
+.img-right {
+  top: 1960px;
+}
+
+.modal-content{
+  &__inner {
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+  }
+}

@@ -1,0 +1,29 @@
+
+
+.header {
+  &__desktop {
+    display: block;
+  }
+  &__mobile {
+    display: none;
+  }
+}
+
+.top {
+
+  &__footer {
+    left: 25%;
+    bottom: 25%;
+  }
+
+  &__title {
+    font-size: 6em;
+    padding: 35% 10% 0 10%;
+  }
+}
+
+.right {
+  margin: 0 0 0 auto;
+}
+
+

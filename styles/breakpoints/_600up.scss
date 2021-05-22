@@ -1,0 +1,38 @@
+
+
+
+.top {
+  &__footer {
+    left: 20%;
+    bottom: 25%;
+  }
+
+  &__title {
+    font-size: 4em;
+    padding: 60% 10% 0 10%;
+  }
+}
+
+.aboutme {
+  &__title {
+    & > img {
+      width: 180px;
+    }
+  }
+}
+
+.img-left {
+  top: 1150px;
+}
+
+.contact {
+  &__form {
+    margin-left: 50px
+  }
+}
+
+.modal-content{
+  &__inner {
+    padding: 30px 60px;
+  }
+}
